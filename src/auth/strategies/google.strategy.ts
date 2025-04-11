@@ -21,7 +21,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy) {
 		_refreshToken: string,
 		profile: Profile,
 		done: VerifyCallback
-	) {
+	): Promise<any> {
 		const { displayName, emails, photos } = profile
 
 		if (!emails || !emails[0] || !photos || !photos[0]) {
